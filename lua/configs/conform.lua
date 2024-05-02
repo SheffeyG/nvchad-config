@@ -1,7 +1,7 @@
 local options = {
   formatters_by_ft = {
-    c = { "clang_fmt" },
-    cpp = { "clang_fmt" },
+    c = { "clang-format" },
+    cpp = { "clang-format" },
     css = { "prettier" },
     javascript = { "prettier" },
     html = { "prettier" },
@@ -18,7 +18,8 @@ local options = {
   -- },
 }
 
-require("conform").formatters.clang_fmt = vim.deepcopy(require("conform.formatters.clang-format"))
-require("conform").formatters.clang_fmt.prepend_args = {'-style="{IndentWidth: 4}"'}
+require("conform").formatters["clang-format"] = {
+  args = {"-style='{TabWidth: 4}'"},
+}
 
 require("conform").setup(options)
