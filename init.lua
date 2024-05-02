@@ -1,17 +1,26 @@
 local opt = vim.opt
-local autocmd = vim.api.nvim_create_autocmd
+-- local autocmd = vim.api.nvim_create_autocmd
 
 -------------------------------------- options ------------------------------------------
 -- Indent
-opt.tabstop = 4
-opt.softtabstop = 4
+opt.ts = 4
+opt.sw = 4
+opt.tw = 0
 
 -- Numbers
 opt.relativenumber = true
 
+-- Cursor
+-- opt.guicursor = "i:block"
+
 -------------------------------------- autocmds ------------------------------------------
 -- Auto resize panes when resizing nvim window
-autocmd("VimResized", {
-    pattern = "*",
-    command = "tabdo wincmd =",
-})
+-- autocmd("VimResized", {
+--     pattern = "*",
+--     command = "tabdo wincmd =",
+-- })
+
+-- Auto close the last nvtree windows
+-- autocmd( "QuitPre", {
+--   callback = function() vim.cmd("NvimTreeClose") end,
+-- })
