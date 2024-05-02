@@ -1,6 +1,6 @@
-# NvChad custom config
+# NvChad Self Config
 
-## NvChad setup
+## Install
 
 ```
 git clone https://github.com/SheffeyG/nvchad-config.git ~/.config/nvim && nvim
