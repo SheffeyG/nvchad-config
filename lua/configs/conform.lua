@@ -1,7 +1,7 @@
 local options = {
   formatters_by_ft = {
-    c = { "clang-format" },
-    cpp = { "clang-format" },
+    -- c = { "clang-format" },
+    -- cpp = { "clang-format" },
     css = { "prettier" },
     javascript = { "prettier" },
     html = { "prettier" },
@@ -18,8 +18,8 @@ local options = {
   -- },
 }
 
-require("conform").formatters["clang-format"] = {
-  args = {"-style='{TabWidth: 4}'"},
-}
+-- require("conform").formatters["clang-format"] = {
+--   prepend_args  = {"--style='{IndentWidth: 8}'"},
+-- }
 
 require("conform").setup(options)
