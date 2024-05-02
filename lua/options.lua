@@ -1,14 +1,16 @@
 require "nvchad.options"
 
-local opt = vim.opt
+-- local opt = vim.opt
+local o = vim.o
 
 -- cursorline
-opt.cursorlineopt ='both'
+o.cursorlineopt ='both'
 
--- indent
-opt.shiftwidth = 4
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.smartindent = true
+-- Indenting
+o.expandtab = true
+o.shiftwidth = 4
+o.smartindent = true
+o.tabstop = 4
+o.softtabstop = 4
 
-opt.relativenumber = true
+o.relativenumber = true
