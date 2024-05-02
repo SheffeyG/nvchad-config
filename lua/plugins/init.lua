@@ -1,21 +1,6 @@
 return {
-  {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    config = function()
-      require "configs.conform"
-    end,
-  },
 
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-
-  -- These are some examples, uncomment them if you want to see them work!
+  -- LSP stuff
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -31,9 +16,18 @@ return {
   			-- "lua-language-server", "stylua",
   			-- "html-lsp", "css-lsp",
         "prettier",
-        "clangd", "pyright"
+        "pyright"
+        -- "clangd", 
   		},
   	},
+  },
+
+  {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    config = function()
+      require "configs.conform"
+    end,
   },
 
   -- {
@@ -45,4 +39,13 @@ return {
   -- 		},
   -- 	},
   -- },
+
+  -- Custom plugins
+  {
+    "max397574/better-escape.nvim",
+    event = "InsertEnter",
+    config = function()
+      require("better_escape").setup()
+    end,
+  },
 }
