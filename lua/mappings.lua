@@ -6,7 +6,7 @@ local map = vim.keymap.set
 -- NORMAL
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
-map("n", "<S-u>", "<C-r>", { desc = "General Redo" })
+-- map("n", "<S-u>", "<C-r>", { desc = "General Redo" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 -- map("i", "jk", "<ESC>")
 
@@ -29,7 +29,3 @@ map("t", "<ESC>", close_terminal, { desc = "Terminal Close terminal" })
 -- map("n", "<leader>h", function()
 --     require("nvchad.term").new { pos = "sp", size = 0.5 }
 -- end, { desc = "Terminal New horizontal terminal" })
-
--- LSP
--- map("n", "d[", vim.diagnostic.goto_prev, { desc = "LSP Go to previous diagnostic" })
--- map("n", "d]", vim.diagnostic.goto_next, { desc = "LSP Go to next diagnostic" })

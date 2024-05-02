@@ -1,6 +1,6 @@
 return {
 
-  -- LSP stuff
+  -- LSP config
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -8,16 +8,16 @@ return {
       require "configs.lspconfig"
     end,
   },
-  
+
   {
   	"williamboman/mason.nvim",
   	opts = {
   		ensure_installed = {
   			-- "lua-language-server", "stylua",
   			-- "html-lsp", "css-lsp",
+        "clangd", "clangd-format",
+        "pyright", "black", "isort",
         "prettier",
-        "pyright"
-        -- "clangd", 
   		},
   	},
   },
@@ -30,13 +30,16 @@ return {
     end,
   },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+  	"nvim-treesitter/nvim-treesitter",
+  	opts = {
+  		ensure_installed = {
+        "html", "css",
+        "bash", "c", "cpp",
+        "python",
+        "json", "markdown",
+  		},
+      auto_install = "true",
+  	},
+  },
 }
