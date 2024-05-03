@@ -1,8 +1,7 @@
-require "nvchad.options"
+require("nvchad.options")
 
 local opt = vim.opt
 local o = vim.o
-
 
 -- Indenting
 o.expandtab = true
@@ -11,7 +10,7 @@ o.smartindent = true
 o.tabstop = 4
 o.softtabstop = 4
 
-o.cursorlineopt ='both'
+o.cursorlineopt = "both"
 o.relativenumber = true
 
 opt.swapfile = false

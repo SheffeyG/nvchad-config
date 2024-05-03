@@ -5,41 +5,48 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
-      require "configs.lspconfig"
+      require("configs.lspconfig")
     end,
   },
 
   {
-  	"williamboman/mason.nvim",
-  	opts = {
-  		ensure_installed = {
-  			-- "lua-language-server", "stylua",
-  			-- "html-lsp", "css-lsp",
-        "clangd", "clangd-format",
-        "pyright", "black", "isort",
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        -- "lua-language-server", "stylua",
+        -- "html-lsp", "css-lsp",
+        -- "clangd",
+        -- "clangd-format",
+        "black",
+        "isort",
+        "pyright",
         "prettier",
-  		},
-  	},
+      },
+    },
   },
 
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
     config = function()
-      require "configs.conform"
+      require("configs.conform")
     end,
   },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-        "html", "css",
-        "bash", "c", "cpp",
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "bash",
+        "c",
+        "css",
+        "cpp",
+        "html",
+        "json",
         "python",
-        "json", "markdown",
-  		},
+        "markdown",
+      },
       auto_install = "true",
-  	},
+    },
   },
 }

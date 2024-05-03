@@ -1,5 +1,4 @@
-require "nvchad.mappings"
-
+require("nvchad.mappings")
 
 local map = vim.keymap.set
 
@@ -20,8 +19,8 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 -- TERMINAL
 local function close_terminal()
-    local win = vim.api.nvim_get_current_win()
-    vim.api.nvim_win_close(win, true)
+  local win = vim.api.nvim_get_current_win()
+  vim.api.nvim_win_close(win, true)
 end
 
 map("t", "jk", close_terminal, { desc = "Terminal Close terminal" })
