@@ -2,14 +2,13 @@ require("nvchad.options")
 
 local platform = require("platform")
 
-local opt = vim.opt
+-- local opt = vim.opt
 local o = vim.o
 local g = vim.g
 
 o.cursorlineopt = "both"
 o.relativenumber = true
-
-opt.swapfile = false
+o.swapfile = false
 
 -- Indenting
 o.expandtab = true
@@ -20,7 +19,7 @@ o.softtabstop = 4
 
 -- Clipboard
 if platform.wsl then
-    opt.clipboard = "unnamed,unnamedplus"
+    o.clipboard = "unnamed,unnamedplus"
     g.clipboard = {
         name = "WslClipboard",
         copy = {

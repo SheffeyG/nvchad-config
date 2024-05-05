@@ -7,6 +7,7 @@ local mason_preinstall = {
     "prettier",
 }
 
+-- pkgs doesn't supported in termux
 if not platform.termux then
     table.insert(mason_preinstall, "clangd")
     table.insert(mason_preinstall, "stylua")
