@@ -1,10 +1,27 @@
+local platform = require("platform")
+
+local mason_preinstall = {
+    "black",
+    "isort",
+    "pyright",
+    "prettier",
+}
+
+if not platform.termux then
+    table.insert(mason_preinstall, "clangd")
+    table.insert(mason_preinstall, "stylua")
+    table.insert(mason_preinstall, "lua-language-server")
+end
+
 return {
 
     -- LSP config
     {
         "neovim/nvim-lspconfig",
         config = function()
-            -- require("nvchad.configs.lspconfig").defaults()
+            if not platform.termux then
+                require("nvchad.configs.lspconfig").defaults()
+            end
             require("configs.lspconfig")
         end,
     },
@@ -12,16 +29,7 @@ return {
     {
         "williamboman/mason.nvim",
         opts = {
-            ensure_installed = {
-                -- "lua-language-server", "stylua",
-                -- "html-lsp", "css-lsp",
-                -- "clangd",
-                -- "clangd-format",
-                "black",
-                "isort",
-                "pyright",
-                "prettier",
-            },
+            ensure_installed = mason_preinstall,
         },
     },
 
