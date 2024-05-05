@@ -2,6 +2,12 @@ require("nvchad.options")
 
 local opt = vim.opt
 local o = vim.o
+local g = vim.g
+
+o.cursorlineopt = "both"
+o.relativenumber = true
+
+opt.swapfile = false
 
 -- Indenting
 o.expandtab = true
@@ -10,7 +16,19 @@ o.smartindent = true
 o.tabstop = 4
 o.softtabstop = 4
 
-o.cursorlineopt = "both"
-o.relativenumber = true
-
-opt.swapfile = false
+-- Clipboard
+if vim.fn.has('wsl') then
+  opt.clipboard = "unnamed,unnamedplus"
+  g.clipboard = {
+    name = "WslClipboard",
+    copy = {
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
+    },
+    paste = {
+      ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = false,
+  }
+end
