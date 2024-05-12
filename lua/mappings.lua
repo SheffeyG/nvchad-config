@@ -10,12 +10,12 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 -- map("i", "jk", "<ESC>")
 
 -- Move line
-map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
-map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
-map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "Move line down" })
-map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up" })
-map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
-map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down", silent = true })
+map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up", silent = true })
+map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "Move line down", silent = true })
+map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up", silent = true })
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line down", silent = true })
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line up", silent = true })
 
 -- Terminal
 local function close_terminal()
