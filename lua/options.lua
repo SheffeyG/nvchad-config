@@ -7,7 +7,7 @@ local o = vim.o
 local g = vim.g
 
 o.cursorlineopt = "both"
-o.relativenumber = true
+-- o.relativenumber = true
 o.swapfile = false
 
 -- Indenting
