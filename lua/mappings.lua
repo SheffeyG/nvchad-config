@@ -33,7 +33,7 @@ map("t", "<ESC>", close_terminal, { desc = "Terminal Close terminal" })
 local function code_runner()
     vim.cmd("write");
     require("nvchad.term").runner({
-        id = "runner",
+        -- id = "runner",
         pos = "sp",
 
         cmd = function()
@@ -50,5 +50,5 @@ local function code_runner()
     })
 end
 
-map({ "n", "i" }, "<leader>cr", code_runner)
+map({ "n" }, "<leader>cr", code_runner)
 
