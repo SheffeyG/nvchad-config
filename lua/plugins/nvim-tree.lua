@@ -1,8 +1,21 @@
--- Fix termux nvtree icons
 if vim.fn.has("termux") ~= 1 then
-    return {}
+    return {
+        "nvim-tree/nvim-tree.lua",
+        config = function()
+            require("nvim-tree").setup({
+                renderer = {
+                    icons = {
+                        git_placement = "after",
+                        -- padding = "",
+                        symlink_arrow = " ➜ ",
+                    }
+                }
+            })
+        end
+    }
 end
 
+-- Fix termux nvtree icons
 local nvtree_devicons = require("nvim-web-devicons").get_icons()
 local nvchad_devicons = require("nvchad.icons.devicons")
 local override = {}
