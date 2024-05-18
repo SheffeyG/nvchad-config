@@ -1,4 +1,5 @@
-if not require("platform").termux then
+-- Fix termux nvtree icons
+if vim.fn.has("termux") ~= 1 then
     return {}
 end
 

@@ -6,8 +6,7 @@ local mason_preinstall = {
 }
 
 -- pkgs doesn't supported in termux
-local platform = require("platform")
-if not platform.termux then
+if vim.fn.has("termux") ~= 1 then
     table.insert(mason_preinstall, "clangd")
     table.insert(mason_preinstall, "stylua")
     table.insert(mason_preinstall, "lua-language-server")

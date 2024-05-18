@@ -1,7 +1,5 @@
 require("nvchad.options")
 
-local platform = require("platform")
-
 -- local opt = vim.opt
 local o = vim.o
 local g = vim.g
@@ -18,7 +16,7 @@ o.tabstop = 4
 o.softtabstop = 4
 
 -- Clipboard
-if platform.wsl then
+if vim.fn.has("wsl") == 1 then
     o.clipboard = "unnamed,unnamedplus"
     g.clipboard = {
         name = "WslClipboard",

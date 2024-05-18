@@ -1,8 +1,6 @@
 local servers = { "clangd", "pyright" }
 
-local platform = require("platform")
 local lspconfig = require("lspconfig")
-
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
@@ -10,7 +8,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 return {
     "neovim/nvim-lspconfig",
     config = function()
-        if not platform.termux then
+        if vim.fn.has("termux") ~= 1 then
             require("nvchad.configs.lspconfig").defaults()
         end
         for _, lsp in ipairs(servers) do
