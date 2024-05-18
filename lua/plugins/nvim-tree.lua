@@ -1,6 +1,8 @@
+if not require("platform").termux then
+    return {}
+end
+
 -- local nvtree_devicons = require("nvim-web-devicons").get_icons()
--- local nvtree_devicons = require("nvim-web-devicons")
--- local nvtree_devicons = nvtree_devicons.get_icons()
 local nvchad_devicons = require("nvchad.icons.devicons")
 local override = {}
 
@@ -24,10 +26,10 @@ return {
                 renderer = {
                     icons = {
                         -- padding = '',
-                        padding = '\u{200A}',
-                        symlink_arrow = '->',
-                    }
-                }
+                        -- padding = "\u{200A}",
+                        symlink_arrow = "->",
+                    },
+                },
             })
         end,
     },
@@ -36,8 +38,8 @@ return {
         "nvim-tree/nvim-web-devicons",
         config = function()
             -- dofile(vim.g.base46_cache .. "devicons")
-            require("nvim-web-devicons").setup({ 
-                override = override 
+            require("nvim-web-devicons").setup({
+                override = override,
             })
         end,
     },

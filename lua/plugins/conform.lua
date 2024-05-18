@@ -18,8 +18,10 @@ local options = {
     -- },
 }
 
--- require("conform").formatters["clang-format"] = {
---   prepend_args  = {"--style='{IndentWidth: 8}'"},
--- }
-
-require("conform").setup(options)
+return {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    config = function()
+        require("conform").setup(options)
+    end,
+}

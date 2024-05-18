@@ -1,61 +1,24 @@
+local servers = { "clangd", "pyright" }
+
 local platform = require("platform")
+local lspconfig = require("lspconfig")
 
-local mason_preinstall = {
-    "black",
-    "isort",
-    "pyright",
-    "prettier",
-}
-
--- pkgs doesn't supported in termux
-if not platform.termux then
-    table.insert(mason_preinstall, "clangd")
-    table.insert(mason_preinstall, "stylua")
-    table.insert(mason_preinstall, "lua-language-server")
-end
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local on_init = require("nvchad.configs.lspconfig").on_init
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 return {
-
-    -- LSP config
-    {
-        "neovim/nvim-lspconfig",
-        config = function()
-            if not platform.termux then
-                require("nvchad.configs.lspconfig").defaults()
-            end
-            require("configs.lspconfig")
-        end,
-    },
-
-    {
-        "williamboman/mason.nvim",
-        opts = {
-            ensure_installed = mason_preinstall,
-        },
-    },
-
-    {
-        "stevearc/conform.nvim",
-        -- event = 'BufWritePre', -- uncomment for format on save
-        config = function()
-            require("configs.conform")
-        end,
-    },
-
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            ensure_installed = {
-                "bash",
-                "c",
-                "css",
-                "cpp",
-                "html",
-                "json",
-                "python",
-                "markdown",
-            },
-            auto_install = "true",
-        },
-    },
+    "neovim/nvim-lspconfig",
+    config = function()
+        if not platform.termux then
+            require("nvchad.configs.lspconfig").defaults()
+        end
+        for _, lsp in ipairs(servers) do
+            lspconfig[lsp].setup({
+                on_attach = on_attach,
+                on_init = on_init,
+                capabilities = capabilities,
+            })
+        end
+    end,
 }
