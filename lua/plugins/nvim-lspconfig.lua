@@ -8,9 +8,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 return {
     "neovim/nvim-lspconfig",
     config = function()
-        if vim.fn.has("termux") ~= 1 then
-            require("nvchad.configs.lspconfig").defaults()
-        end
+        require("nvchad.configs.lspconfig").defaults()
         for _, lsp in ipairs(servers) do
             lspconfig[lsp].setup({
                 on_attach = on_attach,

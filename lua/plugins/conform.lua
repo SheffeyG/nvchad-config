@@ -1,7 +1,7 @@
 local options = {
     formatters_by_ft = {
-        -- c = { "clang-format" },
-        -- cpp = { "clang-format" },
+        c = { "clang-format" },
+        cpp = { "clang-format" },
         css = { "prettier" },
         javascript = { "prettier" },
         html = { "prettier" },
