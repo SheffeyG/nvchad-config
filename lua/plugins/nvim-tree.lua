@@ -1,17 +1,17 @@
 if vim.fn.has("termux") ~= 1 then
     return {
-        "nvim-tree/nvim-tree.lua",
-        config = function()
-            require("nvim-tree").setup({
-                renderer = {
-                    icons = {
-                        git_placement = "after",
-                        -- padding = "",
-                        symlink_arrow = " ➜ ",
-                    }
-                }
-            })
-        end
+        -- "nvim-tree/nvim-tree.lua",
+        -- config = function()
+        --     require("nvim-tree").setup({
+        --         renderer = {
+        --             icons = {
+        --                 git_placement = "after",
+        --                 -- padding = "",
+        --                 symlink_arrow = " ➜ ",
+        --             }
+        --         }
+        --     })
+        -- end
     }
 end
 
