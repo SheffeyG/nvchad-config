@@ -7,7 +7,7 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
--- map("i", "jk", "<ESC>")
+map("i", "jk", "<ESC>")
 
 
 -- Move Line
