@@ -8,6 +8,9 @@ o.cursorlineopt = "both"
 -- o.relativenumber = true
 o.swapfile = false
 
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 -- Indenting
 o.expandtab = true
 o.shiftwidth = 4
