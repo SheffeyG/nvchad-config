@@ -15,7 +15,7 @@ if vim.fn.has("termux") == 1 then
             icons = {
                 git_placement = "after",
                 padding = "",
-                symlink_arrow = "➜",
+                symlink_arrow = "➜ ",
                 glyphs = {
                     default = "󰈚 ",
                     symlink = " ",
@@ -33,7 +33,7 @@ if vim.fn.has("termux") == 1 then
                         unstaged = "✗",
                         staged = "✓",
                         unmerged = "",
-                        renamed = "➜",
+                        renamed = "➜ ",
                         untracked = "+",
                         deleted = "-",
                         ignored = "◌",
@@ -43,8 +43,6 @@ if vim.fn.has("termux") == 1 then
         },
     }
 
-    -- override all devicons for termux
-    local nvtree_devicons = require("nvim-web-devicons").get_icons()
     local nvchad_devicons = require("nvchad.icons.devicons")
 
     for name, data in pairs(nvtree_devicons) do
